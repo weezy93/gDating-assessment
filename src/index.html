@@ -10,12 +10,21 @@
     <link rel="stylesheet" type="text/css" href="styles/css/main.css">
   </head>
   <body>
-    <nav-bar class="u-full-width"></nav-bar>
+    <nav class="u-full-width">
+      <h3><a href="/#/"><i class="icon-beaker"></i>gChemistry</a></h3>
+
+      <ul>
+        <li><a href="/#/auth/login">login</a></li>
+        <li><a href="/#/auth/register">register</a></li>
+        <li><a href="/#/members">members</a></li>
+      </ul>
+    </nav>
     <div class="container" ng-view></div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
     <script type="text/javascript" src="js/app/app.js"></script>
-    <script type="text/javascript" src="js/app/navBar/navBar.controller.js"></script>
-    <script type="text/javascript" src="js/app/navBar/navBar.directive.js"></script>
+    <script type="text/javascript" src="js/app/routes.js"></script>
+    <script type="text/javascript" src="js/app/allMembers/allMembers.directive.js"></script>
+    <script type="text/javascript" src="js/app/allMembers/allMembers.service.js"></script>
   </body>
 </html>
