@@ -3,14 +3,22 @@
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-      templateUrl: 'home/home.template.html'
+      templateUrl: '../partials/home.html'
     })
     .when('/members', {
-      templateUrl: 'allMembers/allMembers.template.html',
-      controller: 'allMembersCtrl'
+      templateUrl: 'partials/allMembers.html'
     })
     .when('/members/:slug', {
-      templateUrl: 'oneMember/oneMember.template.html'
+      templateUrl: '../partials/oneMember.html'
+    })
+    .when('/auth/login', {
+      templateUrl: '../partials/login.html'
+    })
+    .when('/auth/register', {
+      templateUrl: '../partials/register.html'
+    })
+    .when('/auth/logout', {
+
     })
     .otherwise('/');
   });
