@@ -1,4 +1,7 @@
 (function () {
+
+  'use strict';
+
   angular.module('gChemistry')
   .service('crudService', ['$http', function ($http) {
     return {
