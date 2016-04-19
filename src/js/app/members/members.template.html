@@ -1,7 +1,10 @@
 <p>
   hi
-  {{ vm.memberList}}
+  {{ vm.message }}
 </p>
+{{ vm.person }}
+
 <section ng-repeat="member in vm.membersList | limitTo: 10">
-  {{ member }}
+  {{ member.names.firstName }}
+  {{ member._id }}
 </section>

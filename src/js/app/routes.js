@@ -6,7 +6,7 @@
       templateUrl: '../partials/home.html'
     })
     .when('/members', {
-      templateUrl: 'partials/allMembers.html'
+      templateUrl: '../partials/allMembers.html'
     })
     .when('/members/:slug', {
       templateUrl: '../partials/oneMember.html'

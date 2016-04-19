@@ -8,23 +8,24 @@
   function allMembers(allMembersService) {
     return {
       restrict: 'E',
-      templateUrl: 'js/app/allMembers/members.template.html',
+      templateUrl: 'js/app/members/members.template.html',
       controller: function (allMembersService) {
           var vm = this;
-          vm.member = {}
+          vm.message = 'hello';
           vm.membersList = [];
+          vm.person = {};
 
           allMembersService.getAllMembers()
           .then(function (data) {
-            console.log('data', data[0]);
+            vm.person = data[0];
             vm.membersList = data;
+            console.log(vm.person);
+            return vm.person;
           });
       },
       controllerAs: 'vm'
     };
   };
-
-
 
 })();
 
