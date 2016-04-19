@@ -1,0 +1,7 @@
+<p>
+  hi
+  {{ vm.memberList}}
+</p>
+<section ng-repeat="member in vm.membersList | limitTo: 10">
+  {{ member }}
+</section>
