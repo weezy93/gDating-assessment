@@ -21,7 +21,7 @@
         return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload);
       },
       updateOne: function (resource) {
-
+        
       },
       deleteOne: function (resource) {
 

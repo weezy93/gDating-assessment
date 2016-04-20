@@ -17,9 +17,9 @@
         login: function (resource, user) {
           return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user)
         },
-        logout: function (user) {
-          user = null;
-          $window.localStorage.clear();
+        logout: function () {
+          $window.localStorage.setItem('user', null);
+          $window.localStorage.setItem('token', null);
         },
         setUserInfo: function (userData) { // user object and token
           // userData is what is sent from auth routes

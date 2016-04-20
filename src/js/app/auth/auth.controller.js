@@ -9,6 +9,7 @@
      username: '',
      email: '',
      password: '',
+     gender: '',
      slug: '',
      names: {
        firstName: '',
@@ -26,6 +27,22 @@
 
    $scope.user = initialUser;
    $scope.error = '';
+
+   $scope.login = function (member) {
+     authService.login('members', member)
+     .then(function (result) {
+
+       if (result.status === 200) {
+         authService.setUserInfo(result);
+         $location.path('/members');
+       } else {
+         $scope.error = 'Email and/or password is incorrect'
+       }
+     })
+     .catch(function (err) {
+       console.log('login err', err);
+     });
+   };
 
     $scope.register = function (member) {
       console.log(member);
@@ -48,23 +65,12 @@
          });
        });
 
+       $scope.logout = function () {
+         authService.logout();
+       }
 
     };
-    $scope.login = function (member) {
-      authService.login('members', member)
-      .then(function (result) {
 
-        if (result.status === 200) {
-          authService.setUserInfo(result);
-          $location.path('/members');
-        } else {
-          $scope.error = 'Email and/or password is incorrect'
-        }
-      })
-      .catch(function (err) {
-        console.log('login err', err);
-      });
-    };
   };
 
 })();

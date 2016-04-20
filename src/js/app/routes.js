@@ -32,13 +32,13 @@
     })
     .when('/auth/logout', {
       controller: 'authController',
-      // restricted: false,
-      // preventLoggedIn: false,
+      restricted: false,
+      preventLoggedIn: false,
       resolve: {
-        // test: function (authService, $location) {
-        // authService.logout();
-        // $location.path('/login')
-        // }
+        test: function (authService, $location) {
+        authService.logout();
+        $location.path('/login')
+        }
       }
     })
     .otherwise('/');

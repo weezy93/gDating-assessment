@@ -31,16 +31,26 @@
       </div>
     </div>
     <div class="row">
-      <div class="six columns">
+      <div class="four columns">
         <label for="dob">Date of Birth</label>
         <input class="u-full-width" type="text" name="dob" placeholder="yyyy-mm-dd" ng-model="user.dob">
       </div>
-      <div class="six columns">
+      <div class="four columns">
         <label for="zipcode">Zip Code</label>
         <input class="u-full-width" type="text" name="zipcode" placeholder="80203" ng-model="user.address.zipcode">
       </div>
+      <div class="four columns">
+        <label for="gender">Gender</label>
+        <select class="u-full-width" name="gender" ng-model="user.gender">
+          <option value="">unicorn</option>
+          <option value="0">male</option>
+          <option value="1">female</option>
+          <option value="2">gender queer</option>
+          <option value="3">decline to answer</option>
+        </select>
+      </div>
     </div>
-    <button type="submit" class="button-primary u-full-width">Register</button>
+    <button type="submit" class="button-primary u-full-width">Create an Account</button>
 
   </form>
 </div>
