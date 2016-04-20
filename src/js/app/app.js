@@ -1,3 +1,3 @@
 (function () {
-  angular.module('gChemistry', ['ngRoute']);
+  angular.module('gChemistry', ['ngRoute', 'angular-refills']);
 })();
