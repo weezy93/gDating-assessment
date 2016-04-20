@@ -16,6 +16,7 @@
      dob: '',
      address: {
        zipcode: '',
+       geo: {}
      }
    };
 
@@ -25,6 +26,7 @@
     $scope.register = function (member) {
       authService.getAddress($scope.user.zipcode)
        .then(function (result) {
+         console.log();
          $scope.user.address.geo.lat = result.data.results[0].geometry.location.lat;
          $scope.user.address.geo.lng = result.data.results[0].geometry.location.lng;
 

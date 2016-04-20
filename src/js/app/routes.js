@@ -42,7 +42,7 @@
       }
     })
     .otherwise('/');
-    $httpProvider.interceptors.push('authInterceptor');
+    // $httpProvider.interceptors.push('authInterceptor');
   });
 
   angular.module('gChemistry').run( function ($rootScope, $location, $window, authService) {
