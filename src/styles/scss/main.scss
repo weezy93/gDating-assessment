@@ -1,0 +1,71 @@
+html {
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  a {
+    color: rgb(49, 56, 51);
+    text-decoration: none;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    margin: auto;
+    li {
+      margin: auto;
+      text-align: right;
+    }
+  }
+}
+
+.click {
+  cursor: pointer;
+  &:hover {
+    color: rgb(242, 139, 2);
+    text-decoration: underline;
+  }
+}
+
+$parallax-window-height: 60em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url("http://www.bigskyline.com/images/Skyline-Newcastle-England-europe-night-z.jpg") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+// Based on http://codepen.io/skeurentjes/
+
+
+.testimonials {
+  display: flex;
+}
+
+.testimonials article {
+  margin: auto;
+}
