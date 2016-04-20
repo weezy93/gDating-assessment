@@ -1,6 +1,6 @@
-<a ng-repeat="member in vm.membersList | limitTo: 10" href="/#/members/{{member.slug}}"><section>
+<section class="click" ng-repeat="member in vm.membersList | limitTo: 10" ng-click="vm.getOne(member._id)">
   {{ member.names.firstName }}
   {{ member._id }}
-</section></a>
+</section>
 
 <!-- needs loading gif -->

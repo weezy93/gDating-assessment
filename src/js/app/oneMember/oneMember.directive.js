@@ -2,24 +2,21 @@
   angular.module('gChemistry')
   .directive('oneMember', oneMember);
 
-  oneMember.$inject = ['$routeParams', 'oneMemberService'];
+  oneMember.$inject = ['$routeParams', 'allMembersService'];
 
-  function oneMember($routeParams, oneMemberService) {
+  function oneMember($routeParams, allMembersService) {
     return {
       restrict: 'E',
       templateUrl: 'js/app/oneMember/oneMember.template.html',
-      controller: function ($routeParams, oneMemberService) {
+      controller: function ($routeParams, allMembersService) {
         var vm = this;
-        vm.member = {};
-        console.log('params', $routeParams);
-
-        // oneMemberService.getOneMember()
-        // .then(function (member) {
-        //   vm.member = member;
-        // });
+        vm.member = allMembersService.oneMember;
 
       },
       controllerAs: 'vm'
     }
   };
 })();
+
+
+// using allMembersService to persist data
