@@ -1,26 +1,31 @@
 (function () {
   angular.module('gChemistry')
-  .directive('allMembers', allMembers)
+  .directive('allMembers', allMembers);
 
-  allMembers.$inject = ['allMembersService'];
+  allMembers.$inject = ['$location', 'allMembersService'];
 
 
-  function allMembers(allMembersService) {
+  function allMembers($location, allMembersService) {
     return {
       restrict: 'E',
       templateUrl: 'js/app/members/members.template.html',
-      controller: function (allMembersService) {
+      controller: function ($location, allMembersService) {
           var vm = this;
-          vm.message = 'hello';
           vm.membersList = [];
-          vm.person = {};
+
+          vm.getOne = function(id) {
+            allMembersService.getOneMember(id)
+            .then(function (member) {
+              allMembersService.oneMember = member;
+              console.log(allMembersService.oneMember);
+              $location.path('/members/' + member.slug);
+            });
+          };
 
           allMembersService.getAllMembers()
           .then(function (data) {
             vm.person = data[0];
             vm.membersList = data;
-            console.log(vm.person);
-            return vm.person;
           });
       },
       controllerAs: 'vm'
@@ -29,6 +34,4 @@
 
 })();
 
-
-// register partial with controller and service
-// member dashboard
+// needs loading gif

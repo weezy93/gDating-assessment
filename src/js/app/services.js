@@ -12,7 +12,10 @@
         });
       },
       getOne: function (resource) {
-
+        return $http({
+          method: 'GET',
+          url: 'https://galvanize-student-apis.herokuapp.com/gdating/' + resource
+        })
       },
       addOne: function (resource) {
 

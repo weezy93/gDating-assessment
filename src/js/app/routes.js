@@ -23,3 +23,6 @@
     .otherwise('/');
   });
 })();
+
+// register partial with controller and service
+// member dashboard
