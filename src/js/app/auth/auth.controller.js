@@ -1,45 +1,65 @@
 (function () {
-
   angular.module('gChemistry')
-    .controller('authController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
-      initialUser = {
-        username: '',
-        email: '',
-        password: '',
-        names: {
-          firstName: '',
-          lastName: '',
-        },
-        dob: ''
-      };
+    .controller('authController', authController);
 
-      $scope.registerUser = {};
+  authController.$inject = ['$scope', '$location', 'authService'];
 
-      $scope.user = {};
+  function authController($scope, $location, authService) {
+    initialUser = {
+     username: '',
+     email: '',
+     password: '',
+     names: {
+       firstName: '',
+       lastName: '',
+     },
+     dob: '',
+     address: {
+       zipcode: '',
+     }
+   };
 
-      $scope.register = function (user) {
-        return authService.addMember(user)
-        .then(function (member) {
-        });
+   $scope.user = {};
+   $scope.error = '';
 
-        $scope.registerUser = initialUser;
-      };
+    $scope.register = function (member) {
+      authService.getAddress($scope.user.zipcode)
+       .then(function (result) {
+         $scope.user.address.geo.lat = result.data.results[0].geometry.location.lat;
+         $scope.user.address.geo.lng = result.data.results[0].geometry.location.lng;
+
+         console.log('after zip', $scope.user);
+
+         authService.register($scope.user)
+         .then(function (member) {
+           authService.setUserInfo(member);
+           $location.path('/members/' + member.slug);
+           $scope.user = initialUser;
+         })
+         .catch(function (err) {
+           // check status code, send appropriate message
+           console.log('err', err);
+           return next(err);
+         });
+       });
 
 
-      $scope.register = function (member) {
-        authService.register(member)
-        .then(function (member) {
-          authService.setUserInfo(member);
-          $location.path('/members/' + member.slug);
-          $scope.registerUser = initialUser;
-        })
-        .catch(function (err) {
-          // check status code, send appropriate message
-          console.log('err', err);
-          return next(err);
-        });
-      };
+    };
+    $scope.login = function (member) {
+      authService.login('members', member)
+      .then(function (result) {
 
+        if (result.status === 200) {
+          authService.setUserInfo(result);
+          $location.path('/members');
+        } else {
+          $scope.error = 'Email and/or password is incorrect'
+        }
+      })
+      .catch(function (err) {
+        console.log('login err', err);
+      });
+    };
+  };
 
-    }]);
 })();

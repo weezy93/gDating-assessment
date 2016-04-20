@@ -1,7 +1,7 @@
 (function () {
 
   angular.module('gChemistry')
-  .config(function ($routeProvider, $httpProvider, $location) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
     .when('/', {
       templateUrl: '../partials/home.html',
@@ -20,23 +20,25 @@
     })
     .when('/auth/login', {
       templateUrl: '../partials/login.html',
+      controller: 'authController'
       // restricted: false,
       // preventLoggedIn: true
     })
     .when('/auth/register', {
       templateUrl: '../partials/register.html',
-      controller: 'registerController',
+      controller: 'authController',
       // restricted: false,
       // preventLoggedIn: true,
     })
     .when('/auth/logout', {
+      controller: 'authController',
       // restricted: false,
       // preventLoggedIn: false,
       resolve: {
-        test: function (authService, $location) {
-        authService.logout();
-        $location.path('/login')
-        }
+        // test: function (authService, $location) {
+        // authService.logout();
+        // $location.path('/login')
+        // }
       }
     })
     .otherwise('/');
