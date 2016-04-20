@@ -9,6 +9,7 @@
      username: '',
      email: '',
      password: '',
+     slug: '',
      names: {
        firstName: '',
        lastName: '',
@@ -16,32 +17,34 @@
      dob: '',
      address: {
        zipcode: '',
-       geo: {}
+       geo: {
+         lat: '',
+         lng: ''
+       }
      }
    };
 
-   $scope.user = {};
+   $scope.user = initialUser;
    $scope.error = '';
 
     $scope.register = function (member) {
-      authService.getAddress($scope.user.zipcode)
+      console.log(member);
+      authService.getAddress($scope.user.address.zipcode)
        .then(function (result) {
-         console.log();
          $scope.user.address.geo.lat = result.data.results[0].geometry.location.lat;
          $scope.user.address.geo.lng = result.data.results[0].geometry.location.lng;
+         $scope.user.slug = member.username + '-' + member.dob;
 
-         console.log('after zip', $scope.user);
 
          authService.register($scope.user)
          .then(function (member) {
            authService.setUserInfo(member);
-           $location.path('/members/' + member.slug);
+           $location.path('/members');
            $scope.user = initialUser;
          })
          .catch(function (err) {
            // check status code, send appropriate message
            console.log('err', err);
-           return next(err);
          });
        });
 
