@@ -1,10 +1,6 @@
-<p>
-  hi
-  {{ vm.message }}
-</p>
-{{ vm.person }}
-
-<section ng-repeat="member in vm.membersList | limitTo: 10">
+<a ng-repeat="member in vm.membersList | limitTo: 10" href="/#/members/{{member.slug}}"><section>
   {{ member.names.firstName }}
   {{ member._id }}
-</section>
+</section></a>
+
+<!-- needs loading gif -->

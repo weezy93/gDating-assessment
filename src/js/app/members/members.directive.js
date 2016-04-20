@@ -1,6 +1,6 @@
 (function () {
   angular.module('gChemistry')
-  .directive('allMembers', allMembers)
+  .directive('allMembers', allMembers);
 
   allMembers.$inject = ['allMembersService'];
 
@@ -29,6 +29,4 @@
 
 })();
 
-
-// register partial with controller and service
-// member dashboard
+// needs loading gif
