@@ -17,8 +17,8 @@
           url: 'https://galvanize-student-apis.herokuapp.com/gdating/' + resource
         })
       },
-      addOne: function (resource) {
-
+      addOne: function (resource, payload) {
+        return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload);
       },
       updateOne: function (resource) {
 

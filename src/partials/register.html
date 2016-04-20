@@ -1,0 +1,42 @@
+<div class="signup eight columns">
+  <fieldset>
+    <legend>
+      <h4>{{ title }}</h4>
+    </legend>
+  </fieldset>
+  <form class="register" ng-submit="register(registerUser)">
+
+    <div class="row">
+      <div class="four columns">
+        <label for="username">Username</label>
+        <input class="u-full-width" type="text" name="username" placeholder="v-legrand-music" ng-model="registerUser.username">
+      </div>
+      <div class="four columns">
+        <label for="email">Email</label>
+        <input class="u-full-width" type="email" name="email" placeholder="leadsinger@beachhouse.biz" ng-model="registerUser.email">
+      </div>
+      <div class="four columns">
+        <label for="password">Password</label>
+        <input class="u-full-width" type="password" name="password" placeholder="password" ng-model="registerUser.password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <label for="firstName">First Name</label>
+        <input class="u-full-width" type="text" name="firstName" placeholder="Victoria" ng-model="registerUser.names.firstName">
+      </div>
+      <div class="six columns">
+        <label for="lastName">Last Name</label>
+        <input class="u-full-width" type="text" name="lastName" placeholder="Legrand" ng-model="registerUser.names.lastName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <label for="dob">Date of Birth</label>
+        <input class="u-full-width" type="text" name="dob" placeholder="yyyy-mm-dd" ng-model="registerUser.dob">
+      </div>
+    </div>
+    <button type="submit" class="button-primary u-full-width">Register</button>
+
+  </form>
+</div>
