@@ -1,0 +1,31 @@
+$orange: rgb(242, 139, 2);
+
+main.allMembers {
+  display: flex;
+  flex-flow: row;
+  width: 98%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+main.allMembers > article {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  &.members {
+    width: 80%;
+    display: flex;
+  }
+  &.filter {
+    width: 20%;
+  }
+}
+
+.member {
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    color: $orange;
+    text-decoration: underline;
+  }
+}
