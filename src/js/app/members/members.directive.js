@@ -25,6 +25,7 @@
           allMembersService.getAllMembers()
           .then(function (data) {
             vm.person = data[0];
+            console.log(data[0]);
             vm.membersList = data;
           });
       },

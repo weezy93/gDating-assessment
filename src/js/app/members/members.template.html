@@ -1,6 +1,6 @@
-<section class="click" ng-repeat="member in vm.membersList | limitTo: 10" ng-click="vm.getOne(member._id)">
-  {{ member.names.firstName }}
-  {{ member._id }}
-</section>
-
+  {{ member.names.firstName }} {{ member.names.lastName }}
+  <br>
+  Gender: {{ member.gender | gender }}
+  <br>
+  <img ng-src="{{ member.avatar }}" alt="{{ member.slug }}" />
 <!-- needs loading gif -->
