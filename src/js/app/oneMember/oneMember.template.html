@@ -1,3 +1,9 @@
-<section>
-  {{ vm.member.names.firstName }}
-</section>
+<div class="image">
+  <img ng-src="{{ vm.member.avatar }}" alt="" />
+</div>
+
+<div class="info">
+  <h4 class="row">{{ vm.member.names.firstName }} {{ vm.member.names.lastName }}</h4>
+  <br>
+  <h6 class="row">Gender: {{ vm.member.gender | gender }}</h6>
+</div>
