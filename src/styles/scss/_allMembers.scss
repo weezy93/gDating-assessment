@@ -1,6 +1,8 @@
+$grey : #2f2f2f;
 $orange: rgb(242, 139, 2);
 $faintGrey: rgba(#201d20, 0.63);
 $faintWhite: rgba(249, 250, 246, .7);
+$blue: #33C3F0;
 
 main.allMembers {
   display: flex;
@@ -62,5 +64,14 @@ main.allMembers > article {
   &:hover {
     color: $orange;
     text-decoration: underline;
+  }
+}
+
+input.button-primary.search {
+  background-color: $grey;
+  border-color: $grey;
+  &:hover {
+    color: $blue;
+    background-color: darken($grey, 10%);
   }
 }

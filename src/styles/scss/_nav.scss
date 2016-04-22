@@ -22,19 +22,19 @@ nav {
   ul {
     display: flex;
     list-style: none;
-    width: 50%;
+    width: 30%;
     margin: auto;
-    margin-right: 2rem;
-    .fa-bars {
-      color: $white;
-      cursor: pointer;
-      &:hover {
-        color: $orange;
-      }
-    }
+    margin-right: 0;
+    font-size: .7rem;
     li {
-      margin: auto;
+      margin: 2rem;
       text-align: right;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  nav h3 {
+    font-size: 2rem;
   }
 }
