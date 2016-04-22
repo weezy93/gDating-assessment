@@ -14,6 +14,7 @@
           vm.membersList = [];
           vm.currentData = [];
           vm.noPrevious = true;
+          vm.searchTerm = '';
 
           vm.getOne = function(id) {
             allMembersService.getOneMember(id)
@@ -33,10 +34,9 @@
             vm.membersList = data;
             var index = 0;
 
-            for (var i = 0; i < 7; i++) {
+            for (var i = 0; i < 6; i++) {
               vm.currentData.push(vm.membersList[i]);
               index = i;
-              console.log(index, 'should be 6');
             }
 
             if (vm.currentData[0]._id !== vm.membersList[0]._id) {
@@ -68,6 +68,19 @@
               }
             };
           });
+
+          vm.search = function (searchTerm) {
+            console.log(searchTerm);
+            allMembersService.search(searchTerm)
+            .then(function (results) {
+              vm.currentData = results;
+            })
+            .catch(function (err) {
+              console.log('err', err);
+            });
+          }
+
+
       },
       controllerAs: 'vm'
     };
