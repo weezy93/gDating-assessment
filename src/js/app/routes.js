@@ -50,6 +50,7 @@
   $rootScope.$on('$routeChangeStart', function (event, next, current) {
     // next is route we're going to
     // if restricted and no token
+    $rootScope.currentUser = $window.localStorage.getItem('user');
     if (next.restricted && !$window.localStorage.getItem('token')) {
       $location.path('/auth/login');
     }

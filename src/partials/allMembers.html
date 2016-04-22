@@ -1,7 +1,18 @@
 <main class="allMembers u-full-width">
 
 <article class="filter">
-  Filter
+
+
+  <label for="search">Search</label>
+  <input type="text" placeholder="username" ng-model="vm.searchTerm.username">
+  <input type="text" name="email" placeholder="email" ng-model="vm.searchTerm.email">
+  <input type="text" name="gender" placeholder="gender" ng-model="vm.searchTerm.gender">
+  <input type="text" name="maxAge" placeholder="max age" ng-model="vm.searchTerm.maxAge">
+  <input type="text" name="minAge" placeholder="min age" ng-model="vm.searchTerm.minAge">
+
+  <input type="button" class="button-primary search" value="search" ng-click="vm.search(vm.searchTerm)">
+
+
 </article>
 <article class="members">
   <div class="buttons">

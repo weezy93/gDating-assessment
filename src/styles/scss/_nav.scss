@@ -16,25 +16,32 @@ nav {
       color: $orange;
     }
   }
-  h3 {
+  h4 {
     margin: auto;
   }
   ul {
     display: flex;
     list-style: none;
-    width: 50%;
+    width: 30%;
     margin: auto;
-    margin-right: 2rem;
-    .fa-bars {
-      color: $white;
-      cursor: pointer;
-      &:hover {
-        color: $orange;
-      }
-    }
+    margin-right: 0;
+    font-size: .9rem;
     li {
-      margin: auto;
+      margin: 2rem;
       text-align: right;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  nav h4 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+  nav ul {
+    display: block;
+    li {
+      margin: 1rem;
     }
   }
 }

@@ -50,6 +50,13 @@ main.allMembers > article {
     color: #f28b02;
     text-decoration: underline; }
 
+input.button-primary.search {
+  background-color: #2f2f2f;
+  border-color: #2f2f2f; }
+  input.button-primary.search:hover {
+    color: #33C3F0;
+    background-color: #161616; }
+
 nav {
   display: flex;
   width: 100%;
@@ -60,22 +67,27 @@ nav {
     text-decoration: none; }
     nav a:hover {
       color: #f28b02; }
-  nav h3 {
+  nav h4 {
     margin: auto; }
   nav ul {
     display: flex;
     list-style: none;
-    width: 50%;
+    width: 30%;
     margin: auto;
-    margin-right: 2rem; }
-    nav ul .fa-bars {
-      color: white;
-      cursor: pointer; }
-      nav ul .fa-bars:hover {
-        color: #f28b02; }
+    margin-right: 0;
+    font-size: .9rem; }
     nav ul li {
-      margin: auto;
+      margin: 2rem;
       text-align: right; }
+
+@media (max-width: 500px) {
+  nav h4 {
+    font-size: 2rem;
+    margin-top: 1.5rem; }
+  nav ul {
+    display: block; }
+    nav ul li {
+      margin: 1rem; } }
 
 .loginRegister {
   width: 65%;

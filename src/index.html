@@ -12,17 +12,16 @@
   </head>
   <body>
     <nav class="u-full-width">
-      <h3><a href="/#/"><i class="fa fa-flask" aria-hidden="true"></i> gChemistry</a></h3>
+      <h4><a href="/#/"><i class="fa fa-flask" aria-hidden="true"></i> gChemistry</a></h4>
 
-      <ul class="menu">
-        <li><i class="fa fa-bars" aria-hidden="true"></i>
-          <ul>
-            <li><a href="/#/auth/login">login</a></li>
-            <li><a href="/#/auth/register">register</a></li>
-            <li><a href="/#/members">members</a></li>
-            <li><a href="/#/logout">logout</a></li>
-          </ul>
-        </li>
+      <ul class="menu" ng-hide="$rootScope.currentUser">
+        <li><a href="/#/members">members</a></li>
+        <li><a href="/#/logout">logout</a></li>
+      </ul>
+
+      <ul class="menu" ng-show="$rootScope.currentUser">
+        <li><a href="/#/auth/login">login</a></li>
+        <li><a href="/#/auth/register">register</a></li>
       </ul>
 
 

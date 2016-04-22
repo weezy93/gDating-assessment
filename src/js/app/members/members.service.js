@@ -20,6 +20,13 @@
         .then(function (member) {
           return member.data.data;
         });
+      },
+      search: function (term) {
+        return crudService.search(term)
+        .then(function (results) {
+          console.log(results);
+          return results;
+        });
       }
     };
   };

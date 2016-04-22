@@ -21,10 +21,13 @@
         return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload);
       },
       updateOne: function (resource) {
-        
+        return $http.put('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload);
       },
       deleteOne: function (resource) {
 
+      },
+      search: function (term) {
+        return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/members/search?' + term)
       }
     };
   }]);

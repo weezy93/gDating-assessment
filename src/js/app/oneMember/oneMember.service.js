@@ -3,17 +3,20 @@
   angular.module('gChemistry')
     .service('oneMemberService', oneMemberService);
 
-    oneMemberService.$inject = ['crudService'];
+    oneMemberService.$inject = ['$window', '$location', 'crudService'];
 
-    function oneMemberService(crudService) {
+    function oneMemberService($window, crudService) {
       return {
-        // getOneMember: function (slug) {
-        //   crudService.getOne('member/' + slug)
-        //   .then(function (member) {
-        //     return member.data.data;
-        //   });
-        // }
-      };
+        editProfile: function (member) {
+          return crudService.editOne('members/' + member._id, member)
+          .then(function (member) {
+            console.log(member);
+          })
+          .catch(function (err) {
+            console.log('err', err);
+          });
+        }
+       };
     };
 
 })();
