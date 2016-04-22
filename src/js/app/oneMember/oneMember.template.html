@@ -1,5 +1,8 @@
 <div class="image">
   <img ng-src="{{ vm.member.avatar }}" alt="" />
+  <div class="buttons">
+    <input type="button" class="button button-edit" value="Edit" ng-show="vm.thisMember">
+  </div>
 </div>
 
 <div class="info">
