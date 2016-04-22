@@ -16,7 +16,7 @@ nav {
       color: $orange;
     }
   }
-  h3 {
+  h4 {
     margin: auto;
   }
   ul {
@@ -25,7 +25,7 @@ nav {
     width: 30%;
     margin: auto;
     margin-right: 0;
-    font-size: .7rem;
+    font-size: .9rem;
     li {
       margin: 2rem;
       text-align: right;
@@ -34,7 +34,14 @@ nav {
 }
 
 @media (max-width: 500px) {
-  nav h3 {
+  nav h4 {
     font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+  nav ul {
+    display: block;
+    li {
+      margin: 1rem;
+    }
   }
 }

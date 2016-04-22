@@ -67,7 +67,7 @@ nav {
     text-decoration: none; }
     nav a:hover {
       color: #f28b02; }
-  nav h3 {
+  nav h4 {
     margin: auto; }
   nav ul {
     display: flex;
@@ -75,14 +75,19 @@ nav {
     width: 30%;
     margin: auto;
     margin-right: 0;
-    font-size: .7rem; }
+    font-size: .9rem; }
     nav ul li {
       margin: 2rem;
       text-align: right; }
 
 @media (max-width: 500px) {
-  nav h3 {
-    font-size: 2rem; } }
+  nav h4 {
+    font-size: 2rem;
+    margin-top: 1.5rem; }
+  nav ul {
+    display: block; }
+    nav ul li {
+      margin: 1rem; } }
 
 .loginRegister {
   width: 65%;
