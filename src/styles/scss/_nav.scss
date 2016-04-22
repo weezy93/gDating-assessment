@@ -25,11 +25,35 @@ nav {
     width: 50%;
     margin: auto;
     margin-right: 2rem;
+    .fa-bars {
+      color: $white;
+      cursor: pointer;
+      &:hover {
+        color: $orange;
+      }
+    }
     li {
       margin: auto;
       text-align: right;
     }
   }
 }
-
-// needs media query for drop down nav
+//
+//
+// @media (max-width: 760) {
+//     .menu > li {
+//       display: inline-block;
+//       white-space: nowrap;
+//     }
+//     .menu ul {
+//       position: absolute;
+//       display: none;
+//     }
+//     .menu > li:hover {
+//       position: relative;
+//     }
+//     .menu > li:hover ul {
+//       display: block;
+//     }
+// }
+// // needs media query for drop down nav

@@ -69,6 +69,11 @@ nav {
     width: 50%;
     margin: auto;
     margin-right: 2rem; }
+    nav ul .fa-bars {
+      color: white;
+      cursor: pointer; }
+      nav ul .fa-bars:hover {
+        color: #f28b02; }
     nav ul li {
       margin: auto;
       text-align: right; }
