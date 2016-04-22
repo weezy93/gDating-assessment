@@ -4,7 +4,10 @@
   Filter
 </article>
 <article class="members">
-  Members
+  <div class="buttons">
+    <input type="button" class="button" value="Previous" ng-click="vm.previous()" ng-hide="vm.noPrevious">
+    <input type="button" class="button" value="Next" ng-click="vm.next()">
+  </div>
   <all-members id="allMembersDirective" class="u-full-width" ></all-members>
 </article>
 

@@ -8,6 +8,7 @@
   function allMembersService(crudService) {
     return {
       oneMember: {},
+      firstThree: [],
       getAllMembers: function () {
         return crudService.getAll('members')
         .then(function (members) {

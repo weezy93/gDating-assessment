@@ -29,7 +29,7 @@
    $scope.error = '';
 
    $scope.login = function (member) {
-     authService.login('members', member)
+     authService.login(member)
      .then(function (result) {
 
        if (result.status === 200) {
@@ -45,13 +45,11 @@
    };
 
     $scope.register = function (member) {
-      console.log(member);
       authService.getAddress($scope.user.address.zipcode)
        .then(function (result) {
          $scope.user.address.geo.lat = result.data.results[0].geometry.location.lat;
          $scope.user.address.geo.lng = result.data.results[0].geometry.location.lng;
          $scope.user.slug = member.username + '-' + member.dob;
-
 
          authService.register($scope.user)
          .then(function (member) {

@@ -6,7 +6,7 @@ nav {
   display: flex;
   width: 100%;
   background-color: $grey;
-  margin-bottom: 4rem;
+  // margin-bottom: 4rem;
   height: 6rem;
   a {
     color: $white;
@@ -38,22 +38,3 @@ nav {
     }
   }
 }
-//
-//
-// @media (max-width: 760) {
-//     .menu > li {
-//       display: inline-block;
-//       white-space: nowrap;
-//     }
-//     .menu ul {
-//       position: absolute;
-//       display: none;
-//     }
-//     .menu > li:hover {
-//       position: relative;
-//     }
-//     .menu > li:hover ul {
-//       display: block;
-//     }
-// }
-// // needs media query for drop down nav

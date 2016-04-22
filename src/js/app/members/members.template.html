@@ -1,4 +1,4 @@
-<div class="member" ng-repeat="member in vm.membersList | limitTo: 10" ng-click="vm.getOne(member._id)">
+<div class="member" ng-repeat="member in vm.currentData track by $index | limitTo: 6" ng-click="vm.getOne(member._id)">
 
   <img ng-src="{{ member.avatar }}" alt="{{ member.slug }}" />
 

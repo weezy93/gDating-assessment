@@ -54,7 +54,6 @@ nav {
   display: flex;
   width: 100%;
   background-color: #2f2f2f;
-  margin-bottom: 4rem;
   height: 6rem; }
   nav a {
     color: white;
@@ -112,29 +111,12 @@ body {
   display: flex;
   flex-flow: column; }
 
-.parallax-window {
-  max-height: 20em;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 100%; }
-
-.parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
-  position: relative;
-  z-index: 9; }
-
-.parallax-background {
-  background: url("../chicago.jpeg");
-  background-position: top;
-  background-size: contain;
-  background-color: beige;
-  height: 40em;
-  left: 0;
-  position: absolute;
-  top: -6.66667em;
-  width: 100%; }
+#home {
+  width: 100%;
+  min-height: 80vh;
+  background-image: url("../chicago.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
 
 .testimonials {
   display: flex; }
