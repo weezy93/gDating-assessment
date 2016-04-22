@@ -1,0 +1,4 @@
+div.main.container {
+  background-image: url('../coffee.jpeg');
+  background-size: contain;  
+}

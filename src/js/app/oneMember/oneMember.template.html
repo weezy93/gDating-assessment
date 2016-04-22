@@ -3,7 +3,7 @@
 </div>
 
 <div class="info">
-  <h4 class="row">{{ vm.member.names.firstName }} {{ vm.member.names.lastName }}</h4>
+  <h4 class="row">{{ vm.member.names.firstName | capitalize }} {{ vm.member.names.lastName | capitalize }}</h4>
   <br>
   <h6 class="row">Gender: {{ vm.member.gender | gender }}</h6>
 </div>

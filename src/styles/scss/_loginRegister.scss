@@ -3,10 +3,15 @@ $white : rgba(255, 255, 255, 1);
 $orange: rgb(242, 139, 2);
 $green: rgb(17, 112, 35);
 
+
+
 .loginRegister {
-  width: 50%;
+  width: 65%;
   margin: auto;
   margin-top: 2rem;
+  label {
+    font-size: 1rem;
+  }
 }
 
 button.button-primary {
