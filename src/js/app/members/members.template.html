@@ -1,6 +1,15 @@
-<section class="click" ng-repeat="member in vm.membersList | limitTo: 10" ng-click="vm.getOne(member._id)">
-  {{ member.names.firstName }}
-  {{ member._id }}
-</section>
+<div class="member" ng-repeat="member in vm.currentData track by $index | limitTo: 6" ng-click="vm.getOne(member._id)">
 
+  <img ng-src="{{ member.avatar }}" alt="{{ member.slug }}" />
+
+  <div class="names">
+    <p class="row"><strong>
+      {{ member.names.firstName | capitalize }} {{ member.names.lastName | capitalize }}</strong>
+    </p>
+    <br>
+    <p class="row">
+      Gender: {{ member.gender | gender }}
+    </p>
+  </div>
+</div>
 <!-- needs loading gif -->

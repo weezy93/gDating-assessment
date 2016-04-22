@@ -1,2 +1,14 @@
-<h1 class="u-full-width">All Members</h1>
-<all-members class="container"></all-members>
+<main class="allMembers u-full-width">
+
+<article class="filter">
+  Filter
+</article>
+<article class="members">
+  <div class="buttons">
+    <input type="button" class="button" value="Previous" ng-click="vm.previous()" ng-hide="vm.noPrevious">
+    <input type="button" class="button" value="Next" ng-click="vm.next()">
+  </div>
+  <all-members id="allMembersDirective" class="u-full-width" ></all-members>
+</article>
+
+</main>

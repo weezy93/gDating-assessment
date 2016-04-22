@@ -8,14 +8,18 @@ var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var nodemon = require('gulp-nodemon');
 
+var bourbonPaths = require('bourbon').includePaths;
+var neatPaths = require('bourbon-neat').includePaths;
 
 // *** tasks *** ///
 
 gulp.task('connect', function () {
   connect.server({
     root: './src/',
-    port: 8888,
+    port: 8080,
     livereload: true
   });
 });
@@ -52,6 +56,18 @@ gulp.task('watch', function() {
 gulp.task('clean', function() {
   gulp.src('./dist/*')
     .pipe(clean({force: true}));
+});
+
+gulp.task('sass', function () {
+  return gulp.src(paths.scss)
+    .pipe(sass({
+      includePaths: ['styles'].concat(bourbonPaths, neatPaths)
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./src/client/styles/css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch(paths.scss[1], ['sass']);
 });
 
 gulp.task('minify-css', function() {

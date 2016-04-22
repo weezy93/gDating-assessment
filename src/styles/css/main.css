@@ -1,50 +1,122 @@
-html {
-  font-size: 16px; }
+main.allMembers {
+  display: flex;
+  flex-flow: row;
+  width: 98%;
+  height: 100vh;
+  background-image: url("../building.jpeg");
+  background-size: cover; }
+
+main.allMembers > article {
+  display: flex;
+  flex-flow: column;
+  height: 100vh; }
+  main.allMembers > article.members {
+    width: 70%;
+    display: flex; }
+  main.allMembers > article.filter {
+    width: 30%; }
+
+#allMembersDirective {
+  display: flex;
+  flex-wrap: wrap; }
+
+.member {
+  margin: auto;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  width: 40%;
+  font-size: .7rem;
+  display: flex;
+  background-color: rgba(249, 250, 246, 0.7); }
+  .member.names {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column; }
+  .member p {
+    padding: 0;
+    margin: auto;
+    font-size: .85rem;
+    float: right; }
+    .member p.row.first {
+      font-weight: bold;
+      margin-top: 2rem; }
+  .member img {
+    min-width: 40%;
+    max-width: 60%;
+    margin-right: 1rem; }
+  .member:hover {
+    color: #f28b02;
+    text-decoration: underline; }
 
 nav {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  background-color: #2f2f2f;
+  height: 6rem; }
   nav a {
-    color: #313833;
+    color: white;
     text-decoration: none; }
+    nav a:hover {
+      color: #f28b02; }
+  nav h3 {
+    margin: auto; }
   nav ul {
     display: flex;
     list-style: none;
     width: 50%;
-    margin: auto; }
+    margin: auto;
+    margin-right: 2rem; }
+    nav ul .fa-bars {
+      color: white;
+      cursor: pointer; }
+      nav ul .fa-bars:hover {
+        color: #f28b02; }
     nav ul li {
       margin: auto;
       text-align: right; }
 
-.click {
-  cursor: pointer; }
-  .click:hover {
-    color: #f28b02;
-    text-decoration: underline; }
+.loginRegister {
+  width: 65%;
+  margin: auto;
+  margin-top: 2rem; }
+  .loginRegister label {
+    font-size: 1rem; }
 
-.parallax-window {
-  max-height: 60em;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 100%; }
+button.button-primary {
+  background-color: #117023;
+  border-color: #117023; }
+  button.button-primary:hover {
+    background-color: #0e5a1c;
+    border-color: #117023; }
 
-.parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
-  position: relative;
-  z-index: 9; }
+#oneMember {
+  width: 80%;
+  display: flex;
+  flex-flow: column; }
 
-.parallax-background {
-  background: url("http://www.bigskyline.com/images/Skyline-Newcastle-England-europe-night-z.jpg") repeat;
-  background-position: top;
-  background-size: cover;
-  background-color: beige;
-  height: 120em;
-  left: 0;
-  position: absolute;
-  top: -20em;
-  width: 100%; }
+html {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh; }
+
+body {
+  width: 100%;
+  height: 100vh; }
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column; }
+
+#home {
+  width: 100%;
+  min-height: 80vh;
+  background-image: url("../chicago.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
 
 .testimonials {
   display: flex; }

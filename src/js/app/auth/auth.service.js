@@ -8,22 +8,18 @@
     function authService($http, $window, $location, crudService, allMembersService) {
       return {
         register: function (user) {
-          return crudService.addOne('members', user)
-          .then(function (member) {
-            console.log(member);
-            return member;
-          });
+          return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/register', user);
         },
-        login: function (resource, user) {
+        login: function (user) {
           return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user)
         },
         logout: function () {
-          $window.localStorage.setItem('user', null);
-          $window.localStorage.setItem('token', null);
+          $window.localStorage.clear();
         },
         setUserInfo: function (userData) { // user object and token
+          console.log(userData);
           // userData is what is sent from auth routes
-          $window.localStorage.setItem('user', JSON.stringify(userData.data.data.user));
+          $window.localStorage.setItem('user', JSON.stringify(userData.data.data.user.email));
           $window.localStorage.setItem('token', JSON.stringify(userData.data.data.token));
         },
         getUserInfo: function (userData) {

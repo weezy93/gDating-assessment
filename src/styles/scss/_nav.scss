@@ -1,0 +1,40 @@
+$grey : #2f2f2f;
+$white : rgba(255, 255, 255, 1);
+$orange: rgb(242, 139, 2);
+
+nav {
+  display: flex;
+  width: 100%;
+  background-color: $grey;
+  // margin-bottom: 4rem;
+  height: 6rem;
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+  h3 {
+    margin: auto;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    margin: auto;
+    margin-right: 2rem;
+    .fa-bars {
+      color: $white;
+      cursor: pointer;
+      &:hover {
+        color: $orange;
+      }
+    }
+    li {
+      margin: auto;
+      text-align: right;
+    }
+  }
+}
