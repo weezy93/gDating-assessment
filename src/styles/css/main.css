@@ -15,9 +15,16 @@ main.allMembers > article {
   main.allMembers > article.filter {
     width: 20%; }
 
+#allMembersDirective {
+  display: flex;
+  flex-wrap: wrap; }
+
 .member {
-  margin: 0;
-  cursor: pointer; }
+  margin: 2rem;
+  cursor: pointer;
+  width: 20%; }
+  .member img {
+    width: 80%; }
   .member:hover {
     color: #f28b02;
     text-decoration: underline; }
@@ -56,6 +63,11 @@ button.button-primary {
   button.button-primary:hover {
     background-color: #0e5a1c;
     border-color: #117023; }
+
+#oneMember {
+  width: 80%;
+  display: flex;
+  flex-flow: column; }
 
 html {
   font-size: 16px;

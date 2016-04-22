@@ -1,6 +1,7 @@
-  {{ member.names.firstName }} {{ member.names.lastName }}
-  <br>
+<div class="member" ng-repeat="member in vm.membersList | limitTo: 10" ng-click="vm.getOne(member._id)">
+  <h6>{{ member.names.firstName | capitalize }} {{ member.names.lastName | capitalize }}</h6>
   Gender: {{ member.gender | gender }}
   <br>
   <img ng-src="{{ member.avatar }}" alt="{{ member.slug }}" />
+</div>
 <!-- needs loading gif -->

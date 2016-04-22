@@ -21,9 +21,18 @@ main.allMembers > article {
   }
 }
 
+#allMembersDirective {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .member {
-  margin: 0;
+  margin: 2rem;
   cursor: pointer;
+  width: 20%;
+  img {
+    width: 80%;
+  }
   &:hover {
     color: $orange;
     text-decoration: underline;
