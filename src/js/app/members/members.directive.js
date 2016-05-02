@@ -83,8 +83,6 @@
               console.log('err', err);
             });
           }
-
-
       },
       controllerAs: 'vm'
     };
