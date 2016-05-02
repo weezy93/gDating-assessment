@@ -14,12 +14,12 @@
     <nav class="u-full-width">
       <h4><a href="/#/"><i class="fa fa-flask" aria-hidden="true"></i> gChemistry</a></h4>
 
-      <ul class="menu" ng-hide="$rootScope.currentUser">
+      <ul class="menu" ng-show="$rootScope.currentUser">
         <li><a href="/#/members">members</a></li>
         <li><a href="/#/logout">logout</a></li>
       </ul>
 
-      <ul class="menu" ng-show="$rootScope.currentUser">
+      <ul class="menu" ng-hide="$rootScope.currentUser">
         <li><a href="/#/auth/login">login</a></li>
         <li><a href="/#/auth/register">register</a></li>
       </ul>

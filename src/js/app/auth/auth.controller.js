@@ -2,9 +2,9 @@
   angular.module('gChemistry')
     .controller('authController', authController);
 
-  authController.$inject = ['$scope', '$location', 'authService'];
+  authController.$inject = ['$scope', '$rootScope', '$location', 'authService'];
 
-  function authController($scope, $location, authService) {
+  function authController($scope, $rootScope, $location, authService) {
     initialUser = {
      username: '',
      email: '',
@@ -27,6 +27,7 @@
 
    $scope.user = initialUser;
    $scope.error = '';
+   console.log('logged in?', $rootScope.currentUser);
 
    $scope.login = function (member) {
      authService.login(member)
@@ -64,7 +65,7 @@
        });
 
        $scope.logout = function () {
-         authService.logout();
+         authService.logout($rootScope.currentUser);
        }
 
     };

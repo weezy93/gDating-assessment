@@ -5,6 +5,7 @@
     $routeProvider
     .when('/', {
       templateUrl: '../partials/home.html',
+      controller: 'authController'
       // restricted: false,
       // preventLoggedIn: true
     })

@@ -13,8 +13,8 @@
         login: function (user) {
           return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user)
         },
-        logout: function () {
-          $window.localStorage.clear();
+        logout: function (user) {
+          $window.localStorage.clear(user);
         },
         setUserInfo: function (userData) { // user object and token
           console.log(userData);
