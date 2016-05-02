@@ -15,6 +15,7 @@
           vm.currentData = [];
           vm.noPrevious = true;
           vm.searchTerm = '';
+          vm.loading = true;
 
           vm.getOne = function(id) {
             allMembersService.getOneMember(id)
@@ -28,6 +29,9 @@
 
           allMembersService.getAllMembers()
           .then(function (data) {
+            if (data.length > 0 ) {
+              vm.loading = false;
+            }
             allMembersService.firstThree = [data[0], data[1], data[2]];
             vm.person = data[0];
 

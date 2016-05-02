@@ -6,12 +6,15 @@
     authService.$inject = ['$http', '$window', '$location', 'crudService', 'allMembersService'];
 
     function authService($http, $window, $location, crudService, allMembersService) {
+
+      var url = 'https://galvanize-student-apis.herokuapp.com/gdating/';
+
       return {
         register: function (user) {
-          return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/register', user);
+          return $http.post(url + 'auth/register', user);
         },
         login: function (user) {
-          return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user)
+          return $http.post(url + '/auth/login', user)
         },
         logout: function (user) {
           $window.localStorage.clear(user);
