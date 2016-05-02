@@ -11,6 +11,7 @@
     })
     .when('/members', {
       templateUrl: '../partials/allMembers.html',
+      // controller: 'allMembersCtrl'
       // restricted: true,
       // preventLoggedIn: false
     })
