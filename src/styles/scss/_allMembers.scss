@@ -20,6 +20,11 @@ main.allMembers > article {
   &.members {
     width: 70%;
     display: flex;
+    .loading{
+      width: 200px;
+      margin: auto;
+      margin-top: 2rem;
+    }
   }
   &.filter {
     width: 30%;
